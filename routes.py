@@ -19,3 +19,13 @@ def get_db():
         @router.get("/expenses/")
         def get_all(db:Session = Depends(get_db)):
             return get_all_expenses(db)
+        @router.get("/expenses/month/{year}/{month}/")
+
+        def get_by_month(year : int,month :int,db:Session = Depends(get_db)):
+            return get_expenses_by_month(db,year,month)
+        
+        @router.get("/totals/")
+        def totals(db: Session = Depends(get_db)):
+            return get_totals(db)
+        
+        @

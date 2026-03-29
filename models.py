@@ -10,4 +10,7 @@ class Expense(Base):
     category = Column(String(255))
     created_at = Column(DateTime,default=datetime.now)
                     
-    
+class Salary(Base):
+    __tablename__ = "salary"
+    id = Column(Integer,primary_key =True,index = True)
+    amount = Column(Float)
